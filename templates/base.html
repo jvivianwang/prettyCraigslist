@@ -1,10 +1,53 @@
+{% load static %}
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Pretty Craigslist</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
-    <h2>Home Page</h2>
+
+    <nav class="deep-purple lighten-2">
+        <div class="container nav-wrapper">
+            <a href="/" class="brand-logo">Pretty Craigslist</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="/">Home</a></li>
+            </ul>
+         </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="row search">
+            <form class="col s12" action ="{% url 'search'%}" method="post">
+                {% csrf_token %}
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">search</i>
+                    <input type="text" name="search" placeholder="Search...">
+                </div>
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+
+            </form>
+        </div>
+        {% block content%}
+
+        {% endblock content%}
+
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
