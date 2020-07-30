@@ -7,14 +7,14 @@
     <title>Pretty Craigslist</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
 
-    <nav class="deep-purple lighten-2">
+    <nav class="teal accent-4">
         <div class="container nav-wrapper">
             <a href="/" class="brand-logo">Pretty Craigslist</a>
             <ul id="nav-mobile" class="right">
@@ -26,6 +26,7 @@
 
 
     <div class="container">
+        <center><h3 style="margin-top: 50px">The Craigslist Clone, but <span style="color: #ff8a80">Prettier</span>!</h3></center>
         <div class="row search">
             <form class="col s12" action ="{% url 'search'%}" method="post">
                 {% csrf_token %}
@@ -34,9 +35,9 @@
                     <input type="text" name="search" placeholder="Search...">
                 </div>
 
-                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <center><button class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
-                </button>
+                </button></center>
 
             </form>
         </div>
